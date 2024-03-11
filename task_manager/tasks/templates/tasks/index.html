@@ -5,9 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
-    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <link href="{% static 'tasks/style.css' %}" rel="stylesheet">
 </head>
 <body>
-    <h1> Hello World </h1>
+    <div class="title-container">
+        <h1 class="title"> Task Manager </h1>
+    </div>
+    <div class="main-container">
+        <div class="tasks-container">
+            <div class="task">
+                <div class="task-top">
+                    <h2 class="task-title"> Task Name </h2>
+                    <div class="task-progress">
+                        <span class="material-symbols-outlined done">
+                            check_circle
+                        </span>
+                        <span class="material-symbols-outlined notdone">
+                            cancel
+                        </span>    
+                    </div>
+                </div>
+                <div class="task-bottom">
+                    <p> Description </p>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <script src="{% static 'tasks/tasks.js' %}"></script>
 </body>
 </html>
