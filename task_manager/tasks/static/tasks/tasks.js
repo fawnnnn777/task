@@ -8,5 +8,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
         task.style.filter = 'blur(2px)'
         task.style.animation = 'done 0.5s'
     });
+    const newTaskForm = document.querySelector('.new-task-container');
+    const newTaskButton = document.querySelector('.new-task-button');
+    newTaskButton.addEventListener('click', function(){
+        newTaskForm.style.display = 'block';
+    })
 
 })

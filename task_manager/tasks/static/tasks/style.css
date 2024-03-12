@@ -26,6 +26,7 @@
     text-align: center;
 }
 
+
 body{
     background: rgb(34,193,195);
 background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,07) 100%);
@@ -85,4 +86,88 @@ height: 100vh;
 
 .task-done{
     background-color: green;
+}
+
+.new-task-container{
+    display: flex;
+    transition: 0.5s;
+    padding: 10px;
+    margin: 10px;
+    height: 40vh;
+    justify-content: center;
+
+}
+.new-task-form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type=text], textarea{
+    width: 80%;
+    transition: 0.5s;
+
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+    outline: none;
+    font-size: 1.5rem;
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgb(255, 255, 255, 0.3);
+}
+
+input[type=text]:active,input[type=text]:focus, textarea:focus{
+    -webkit-box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
+box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
+    transition: 0.5s;
+}
+
+.task-des-form{
+    min-height: 80%;
+    line-height: 1.5rem;
+}
+
+input[type=submit]{
+    width: 20%;
+    transition: 0.5s;
+
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: lightcyan;
+    border: 1px solid rgb(255, 255, 255, 0.3);
+}
+input[type=submit]:hover{
+    -webkit-box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
+box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.new-task-button-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.new-task-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: "Nunito", sans-serif;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255, 0.3);
+
+}
+
+.new-task-button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+
 }
