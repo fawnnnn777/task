@@ -14,4 +14,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
         newTaskForm.style.display = 'block';
     })
 
+    const form = document.querySelector('.new-task-form');
+    let taskName;
+    let taskDes;
+    form.addEventListener('submit', function(){
+        taskName = document.querySelector('#taskName')
+        taskDes = document.querySelector('#taskDes')
+    })
+
+    
 })
