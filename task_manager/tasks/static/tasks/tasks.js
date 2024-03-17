@@ -7,13 +7,19 @@ $(document).ready(()=>{
     })
     let taskName;
     let taskDes;
-    let taskContainer = $('.tasks-container')
-    let taskDiv = $('.task').clone()
     $form.submit(()=>{
-        taskName = $('#taskName').text();
-        taskDes = $('#taskDes').text();
+        taskName = $('#taskName').val();
+        taskDes = $('#taskDes').val();
+        fetch('newtask',{
+            method: "POST",
+            body: JSON.stringify({
+                taskName: taskName,
+                taskDes: taskDes,
+            })
+        })
+        .then(response => response.json())
+        .then(result => {
+    
+        })
     })
-    let top = $(taskDiv > '.task-top');
-    let title = $(top > '.task-title');
-    title.text(taskName);
 })

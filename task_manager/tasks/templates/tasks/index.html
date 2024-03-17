@@ -24,6 +24,7 @@
     </div>
     <div class="new-task-container">
         <form class="new-task-form" style>
+            {% csrf_token %}
             <input id="taskName" class="task-name-form" type="text" placeholder="Task Name">
             <textarea id="taskDes" class="task-des-form" placeholder="Task Description"></textarea>
             <input type="submit">
@@ -31,9 +32,10 @@
     </div>
     <div class="main-container">
         <div class="tasks-container">
+            {% for task in tasks %}
             <div class="task">
                 <div class="task-top">
-                    <h2 class="task-title"> Task Name </h2>
+                    <h2 class="task-title"> {{task.title}} </h2>
                     <div class="task-progress">
                         <span class="material-symbols-outlined done">
                             check_circle
@@ -44,12 +46,13 @@
                     </div>
                 </div>
                 <div class="task-bottom">
-                    <p> Description </p>
+                    <p> {{task.description}} </p>
                 </div>
             </div>
+            {% endfor %}
         </div> 
     </div>
-    
+
     <script src="{% static 'tasks/tasks.js' %}"></script>
 </body>
 </html>
