@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
     <link href="{% static 'tasks/style.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="title-container">
@@ -20,7 +22,7 @@
             add_circle
             </span> Add Task </button>
     </div>
-    <div class="new-task-container" style="display: none">
+    <div class="new-task-container">
         <form class="new-task-form" style>
             <input id="taskName" class="task-name-form" type="text" placeholder="Task Name">
             <textarea id="taskDes" class="task-des-form" placeholder="Task Description"></textarea>

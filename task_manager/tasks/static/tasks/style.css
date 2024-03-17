@@ -90,13 +90,12 @@ height: 100vh;
 }
 
 .new-task-container{
-    display: flex;
     transition: 0.5s;
     padding: 10px;
     margin: 10px;
     height: 40vh;
     justify-content: center;
-
+    display: none;
 }
 .new-task-form{
     width: 50%;
