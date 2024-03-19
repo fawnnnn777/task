@@ -11,7 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
     <link href="{% static 'tasks/style.css' %}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{% static 'tasks/tasks.js' %}"></script>
 
+    
 </head>
 <body>
     <div class="title-container">
@@ -33,14 +35,14 @@
     <div class="main-container">
         <div class="tasks-container">
             {% for task in tasks %}
-            <div class="task">
+            <div id="{{task.id}}" class="task">
                 <div class="task-top">
                     <h2 class="task-title"> {{task.title}} </h2>
                     <div class="task-progress">
-                        <span class="material-symbols-outlined done">
+                        <span data-id="{{task.id}}" class="material-symbols-outlined done">
                             check_circle
                         </span>
-                        <span class="material-symbols-outlined notdone">
+                        <span  class="material-symbols-outlined notdone">
                             cancel
                         </span>    
                     </div>
@@ -52,7 +54,5 @@
             {% endfor %}
         </div> 
     </div>
-
-    <script src="{% static 'tasks/tasks.js' %}"></script>
 </body>
 </html>

@@ -22,4 +22,16 @@ $(document).ready(()=>{
     
         })
     })
+
+    function handleDone(id){
+        console.log(id)
+    }
+
+    $('.done').each(function(){
+        var id = $(this).attr('data-id');
+        $(this).on('click', function() {
+            handleDone(id);
+        });
+    });
+    
 })
