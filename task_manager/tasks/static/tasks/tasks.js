@@ -27,11 +27,29 @@ $(document).ready(()=>{
         console.log(id)
     }
 
-    $('.done').each(function(){
+    $('.notdone').on('click', function() {
         var id = $(this).attr('data-id');
-        $(this).on('click', function() {
-            handleDone(id);
+        task = $(`#${id}`)
+        fetch(`removeTask/${id}`, {
+            method: "PUT",
+            body: JSON.stringify({
+                id: id
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(result => {
+            console.log(result);
+            task.remove()
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
         });
     });
+    
     
 })

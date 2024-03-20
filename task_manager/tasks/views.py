@@ -23,13 +23,15 @@ def newTask(request):
         taskDes = data.get('taskDes')
         task = Task.objects.get_or_create(title=taskName, description=taskDes)
         return HttpResponse(status=204)
-    
+
+@csrf_exempt    
 def removeTask(request, id):
-    if request.method == "POST":
+    if request.method == "PUT":
         data = json.loads(request.body)
         if data == ['']:
             return JsonResponse({"error": "no task found"})
-        task = data.get('id')
-        Task.objects.delete(id=task)
-        return HttpResponse(status=204)
+        id = data.get('id')
+        task = Task.objects.get(id=id)
+        task.delete()
+        return JsonResponse({"done":"worked fine"})
     return HttpResponse("good job")
