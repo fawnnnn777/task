@@ -50,6 +50,16 @@ $(document).ready(()=>{
             console.error('There was a problem with the fetch operation:', error);
         });
     });
-    
-    
+
+        $('.done').on('click', function(){
+            var id = $(this).attr('data-id')
+            task = $(`#${id}`);
+            task.css("animation", "done 0.5s")
+            task.css({
+                "background-color": "lightgreen",
+                "opacity": "0.5"
+            })
+            
+        })
+
 })

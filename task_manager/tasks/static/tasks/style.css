@@ -4,19 +4,22 @@
     box-sizing: border-box;
 }
 
+
 @keyframes done{
     0%{
         transform: scale(1, 1);
     }
     50%{
-        transform: scale(1.1, 1.1);
-
+        transform: scale(1.5, 1.5);
+        background-color: lightgreen;
+        opacity: 0.5;
     }
     100%{
-        transform: scale(1, 1);
-
+        transform: scale(0.8, 0.8);
     }
 }
+
+
 
 .title{
     letter-spacing: 5px;
@@ -48,6 +51,7 @@ height: 100vh;
     box-shadow: 9px 16px 35px 4px rgba(35,35,35,0.12);
 -webkit-box-shadow: 9px 16px 35px 4px rgba(35,35,35,0.12);
 -moz-box-shadow: 9px 16px 35px 4px rgba(35,35,35,0.12);
+
 }
 
 .task-top{

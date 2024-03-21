@@ -35,3 +35,21 @@ def removeTask(request, id):
         task.delete()
         return JsonResponse({"done":"worked fine"})
     return HttpResponse("good job")
+
+@csrf_exempt
+def doneTask(request, id):
+    if request.method == "PUT":
+        data = json.loads(request.body)
+        if data == ['']:
+            return JsonResponse({"error":"no task sent"})
+        id = data.get("id")
+        task = Task.objects.get(id=id)
+        task.done = True
+        task.save()
+        return JsonResponse({"done":"perfect"})
+    return HttpResponse("not good job")
+
+def getTasks(request):
+    tasks = Task.objects.all()
+    serialized_tasks = [{'id': task.id, 'done': task.done} for task in tasks]
+    return JsonResponse(serialized_tasks, safe=False)
