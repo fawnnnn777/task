@@ -19,8 +19,13 @@
     }
 }
 
-
-
+.main{
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,07) 100%);
+    background-size: cover;
+    height: auto !important;
+    min-height: 100vh;
+}
 .title{
     letter-spacing: 5px;
 }
@@ -35,7 +40,7 @@ body{
 background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,07) 100%);
 background-repeat: no-repeat;
 background-size: cover;
-height: 100vh;
+
 }
 
 .task{
@@ -51,6 +56,13 @@ height: 100vh;
     box-shadow: 9px 16px 35px 4px rgba(35,35,35,0.12);
 -webkit-box-shadow: 9px 16px 35px 4px rgba(35,35,35,0.12);
 -moz-box-shadow: 9px 16px 35px 4px rgba(35,35,35,0.12);
+
+}
+
+.True{
+    background-color: lightgreen;
+    opacity: 0.5;
+    backdrop-filter: blur(5px);
 
 }
 
@@ -111,24 +123,25 @@ height: 100vh;
 }
 
 .new-task-container{
+    width: 100vw;
     transition: 0.5s;
     padding: 10px;
     margin: 10px;
     height: 40vh;
-    justify-content: center;
     display: none;
+    text-align: center;
 }
 .new-task-form{
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 input[type=text], textarea{
     width: 80%;
     transition: 0.5s;
-
     padding: 10px;
     margin: 10px;
     border-radius: 15px;
@@ -191,4 +204,69 @@ box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
     background-color: rgb(255, 255, 255, 0.3);
     backdrop-filter: blur(4px);
 
+}
+
+@media only screen and (max-width:600px) {
+
+
+    .tasks-container{
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column;
+
+    }
+
+    .task{
+        width: 90%;
+        background: rgb(255, 255, 255, 0.30);
+        border-radius: 15px;
+        margin: 5px auto;
+        padding: 5px;
+        text-align: center;
+        overflow: scroll;
+        transition: 0.2s;
+    }
+
+    input[type=submit]{
+        width: 150%;
+    }
+    input[type=text], textarea{
+        width: 150%;
+        padding: 10px;
+        margin: 10px;
+        font-size: 1.5rem;
+    }
+    .new-task-container{
+        margin: 55px;
+    }
+
+        .new-task-form{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 15px;
+            text-align: center;
+        }
+.task-bottom{
+    padding: 5px;
+}
+    .task-top{
+        padding: 5px;
+        font-size: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .True{
+        background-color: lightgreen;
+        opacity: 0.5;
+        backdrop-filter: blur(5px);
+    }
+
+    .False{
+        background-color: black;
+    }
 }

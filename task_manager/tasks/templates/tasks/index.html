@@ -14,6 +14,7 @@
     <script src="{% static 'tasks/tasks.js' %}"></script>
 </head>
 <body>
+    <div class="main">
     <div class="title-container">
         <h1 class="title"> Task Manager </h1>
     </div>
@@ -34,7 +35,7 @@
         <div class="tasks-container">
             {% for task in tasks %}
             {% if task.done == True %}
-            <div id="{{task.id}}" class="task">
+            <div id="{{task.id}}" class="task {{task.done}}">
                 <div class="task-top">
                     <h2 class="task-title"> {{task.title}} </h2>
                     <div class="task-progress">
@@ -71,6 +72,6 @@
             {% endfor %}
         </div> 
     </div>
-    
+    </div>
 </body>
 </html>
