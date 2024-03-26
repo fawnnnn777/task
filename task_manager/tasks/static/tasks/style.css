@@ -19,6 +19,17 @@
     }
 }
 
+@keyframes remove {
+    0%{
+        transform: scale(1,1);
+    }
+    50%{
+        transform: scale(0.5, 0.5);
+    }
+    100%{
+        transform: scale(0.1, 0.1);
+    }
+}
 .main{
     background: rgb(34,193,195);
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,07) 100%);
@@ -164,7 +175,7 @@ box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
     line-height: 1.5rem;
 }
 
-input[type=submit]{
+#submit{
     width: 20%;
     transition: 0.5s;
 
@@ -174,7 +185,7 @@ input[type=submit]{
     background-color: lightcyan;
     border: 1px solid rgb(255, 255, 255, 0.3);
 }
-input[type=submit]:hover{
+#submit:hover{
     -webkit-box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
 -moz-box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);
 box-shadow: -8px 10px 0px -1px rgba(0,0,0,0.75);

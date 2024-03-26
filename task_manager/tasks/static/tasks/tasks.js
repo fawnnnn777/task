@@ -5,9 +5,10 @@ $(document).ready(()=>{
     $button.click(()=>{
         $form.toggle();
     })
+    let $submit = $('#submit');
     let taskName;
     let taskDes;
-    $form.submit(()=>{
+    $submit.on('click', ()=>{
         taskName = $('#taskName').val();
         taskDes = $('#taskDes').val();
         fetch('newtask',{
@@ -19,13 +20,32 @@ $(document).ready(()=>{
         })
         .then(response => response.json())
         .then(result => {
-    
-        })
-    })
+            console.log(result)
+            $('.tasks-container').append(`
+                        <div id="${result.id}" class="task">
+                            <div class="task-top">
+                                <h2 class="task-title">${result.title}</h2>
+                                <div class="task-progress">
+                                    <span data-id="${result.id}" class="material-symbols-outlined done">
+                                        check_circle
+                                    </span>
+                                    <span data-id="${result.id}" class="material-symbols-outlined notdone">
+                                        cancel
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="task-bottom">
+                                <p>${result.description}</p>
+                            </div>
+                        </div>
+                    `);
+        })        .catch(error => {
+            console.error('Error adding new task:', error);
 
-    function handleDone(id){
-        console.log(id)
-    }
+        });
+        
+    })
+    
 
     $('.notdone').on('click', function() {
         var id = $(this).attr('data-id');
@@ -59,7 +79,16 @@ $(document).ready(()=>{
                 "background-color": "lightgreen",
                 "opacity": "0.5"
             })
-            
+            fetch(`doneTask/${id}`,{
+                method: "PUT",
+                body: JSON.stringify({
+                    id: id
+                })
+            })
+            .then(response => response.json())
+            .then(result =>{
+                console.log(result)
+            })
         })
 
 })

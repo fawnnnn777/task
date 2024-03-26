@@ -21,8 +21,14 @@ def newTask(request):
             return JsonResponse({"error": "NO TASK NAME"}, status=400)
         taskName = data.get('taskName')
         taskDes = data.get('taskDes')
-        task = Task.objects.get_or_create(title=taskName, description=taskDes)
-        return HttpResponse(status=204)
+        task = Task.objects.create(title=taskName, description=taskDes)
+        response_data = {
+            "id": task.id,
+            "title": task.title,
+            "description": task.description,
+        }
+        
+        return JsonResponse(response_data)
 
 @csrf_exempt    
 def removeTask(request, id):
